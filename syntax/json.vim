@@ -63,6 +63,8 @@ if (!exists("g:vim_json_warnings") || g:vim_json_warnings==1)
 	" Syntax: No comments in JSON, see http://stackoverflow.com/questions/244777/can-i-comment-a-json-file
 	syn match   jsonCommentError  "//.*"
 	syn match   jsonCommentError  "\(/\*\)\|\(\*/\)"
+	syn match   jsonComment       "#.*"
+
 
 	" Syntax: No semicolons in JSON
 	syn match   jsonSemicolonError  ";"
@@ -108,6 +110,7 @@ if version >= 508 || !exists("did_json_syn_inits")
   hi def link jsonNull			Function
   hi def link jsonBoolean		Boolean
   hi def link jsonKeyword		Label
+  hi def link jsonComment		Comment
 
 	if (!exists("g:vim_json_warnings") || g:vim_json_warnings==1)
 		hi def link jsonNumError					Error
